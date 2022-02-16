@@ -18,6 +18,38 @@
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
+            <div>
+                <x-label for="prenom" :value="__('Prenom')" />
+
+                <x-input id="prenom" class="block mt-1 w-full" type="text" name="name" :value="old('prenom')" required autofocus />
+            </div
+            <div>
+                <x-label for="age" :value="__('Age')" />
+
+                <x-input id="age" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            </div
+                {{-- AVATAR --}}
+                <div>
+                    <x-label for="avatar" :value="__('Avatar')" />
+                    <div class="flex">
+                        <div>
+                            <select name="avatar">
+                                @forelse ($data as $item )
+                                <option value ={{$item->id}} class="choice" >{{$item->nom}}</option>
+                                @empty
+                            @endforelse
+                                </select>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    let choice = document.querySelectorAll(".choice")
+                    choice.forEach(element => {
+                        console.log(element.value);
+                    });
+
+                </script>
 
             <!-- Email Address -->
             <div class="mt-4">
@@ -57,3 +89,4 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+

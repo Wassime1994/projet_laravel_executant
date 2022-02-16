@@ -14,7 +14,7 @@
             </div>
 
             <nav class="mt-10">
-                <a class="flex items-center mt-4 py-2 px-6 bg-gray-100 bg-opacity-25 text-gray-100" href="/">
+                <a class="flex items-center mt-4 py-2 px-6 bg-gray-100 bg-opacity-25 text-gray-100" href={{route('admin.myprofil')}}>
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -23,11 +23,11 @@
                             d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
                     </svg>
 
-                    <span class="mx-3 text-black">Dashboard</span>
+                    <span class="mx-3 text-black">MyProfile</span>
                 </a>
 
                 <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                    href="/ui-elements">
+                href={{route('admin.users')}}>
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -39,7 +39,7 @@
                 </a>
 
                 <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                    href="/tables">
+                    href={{route('admin.avatar')}}>
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -99,14 +99,14 @@
     );height: 150px;width: 100%; background-color: #00b5f7;
     background-size: 53px 53px;" class="rounded-t-lg"></div>
         <div>
-            <div class="text-center" style="margin-top: -44px">
+            <div class="text-center p-3" style="margin-top: -44px">
                 <span class="border-4 border-white rounded-full mx-auto inline-block">
-                    <img class="rounded-full w-20 h-20" src="https://randomwordgenerator.com/img/picture-generator/51e6dc41434faa0df7c5d57bc32f3e7b1d3ac3e455517349762f72d794_640.jpg" alt="profile" />
+                    <img class="rounded-full w-20 h-20" src= {{asset('img/'. Auth::user()->avatar->img) }} />
                 </span>
-            </div>
-            <p class="text-center"><span class="font-bold">Utilisateurs : {{Auth::user()->name}} </span></p>
-            <p class="text-xs text-center mb-5">Role : Sumatera</p>
-            <hr />
+            <p class="text-center"><span class="font-bold">Utilisateur connecté : {{Auth::user()->name}} </span></p>
+            <p class="text-center"><span class="font-bold">Roles : {{Auth::user()->role->role}} </span></p>
+        </div>
+    </div>
 
             </div>
         </div>
