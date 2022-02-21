@@ -11,7 +11,6 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
             <!-- Name -->
             <div>
                 <x-label for="name" :value="__('Name')" />
@@ -21,13 +20,12 @@
             <div>
                 <x-label for="prenom" :value="__('Prenom')" />
 
-                <x-input id="prenom" class="block mt-1 w-full" type="text" name="name" :value="old('prenom')" required autofocus />
-            </div
+                <x-input id="prenom" class="block mt-1 w-full" type="text" name="prenom" :value="old('prenom')" required autofocus />
+            </div>
             <div>
                 <x-label for="age" :value="__('Age')" />
-
-                <x-input id="age" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div
+                <x-input id="age" class="block mt-1 w-full" type="text" name="age" :value="old('name')" required autofocus />
+            </div>
                 {{-- AVATAR --}}
                 <div>
                     <x-label for="avatar" :value="__('Avatar')" />
@@ -50,7 +48,6 @@
                     });
 
                 </script>
-
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />

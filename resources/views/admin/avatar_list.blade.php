@@ -2,10 +2,10 @@
 @section('content')
 <!-- component -->
 <div class="flex flex-col min-h-screen justify-center items-center text-white bg-gray-400">
-    <div class="flex flex-wrap justify-center">
-              <!--CARD -->
+    <h1 class="text-5xl text-black">Nombre avatar      {{   count($data)    }} / 7 </h1>
+    @include('layouts.flash')
+<div class="flex flex-wrap justify-center h-screen">
             @forelse ($data as $item )
-
             <div class="flex p-4 ml-5 md:p-10">
              <div class="w-full flex items-center justify-center bg-transparent">
                 <div class="relative w-48 md:w-52 h-14 sm:h-14 md:h-16 bg-gradient-to-r from-purple-700 to-purple-900 rounded-br-full pt-4 pb-8 px-4 shadow-md hover:shadow-lg transition flex flex-col items-center">
@@ -41,6 +41,8 @@
             @csrf
             <div id="div" class="hidden m-4">
                 <input type="file" name="avatar_img">
+                <input name="nom" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
+
                 <button type="submit" class="m-5 p-3 block text-white bg-black-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="defaultModal">
                         ADD AVATAR
                   </button>

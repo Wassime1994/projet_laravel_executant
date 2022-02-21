@@ -15,30 +15,31 @@
 
 <div class="w-full max-w-xs">
     <h2>Modifier mon profil</h2>
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form action={{route('user.update', Auth::user()->id)}} method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        @csrf
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
          Nom
         </label>
-        <input  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" value={{Auth::user()->name}} />
+        <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" value={{Auth::user()->name}} />
       </div>
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
          Prenom
         </label>
-        <input  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" value={{Auth::user()->prenom}} />
+        <input  name="prenom" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" value={{Auth::user()->prenom}} />
       </div>
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
          Age
         </label>
-        <input  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" value={{Auth::user()->age}} />
+        <input name="age" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" value={{Auth::user()->age}} />
       </div>
       <div class="mb-6">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
          Email
         </label>
-        <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text" value={{Auth::user()->email}}>
+        <input name='email' class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="text" value={{Auth::user()->email}}>
       </div>
       <div class="mb-6">
         <select name="avatar">
@@ -48,7 +49,7 @@
         @endforelse
             </select>
     </div>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Modifier Profil
       </button>
       </div>

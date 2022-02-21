@@ -18,13 +18,21 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             ["name"=>"Akachar",
-            "prenom"=>"Wassime" , 
+            "prenom"=>"Wassime" ,
             "age"=>26 ,
             "email"=>"wassime.akachar@hotmail.com" ,
             "password"=>Hash::make('wawawawa') ,
             "role_id"=>1,
             "avatar_id"=>1
-            ]
+        ],
+        ["name"=>"Bibir",
+        "prenom"=>"Katana" ,
+        "age"=>22 ,
+        "email"=>"webmaster@hotmail.com" ,
+        "password"=>Hash::make('wawawawa') ,
+        "role_id"=>2,
+        "avatar_id"=>2
+        ]
         ]) ;
     }
 }

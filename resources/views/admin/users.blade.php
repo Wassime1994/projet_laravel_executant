@@ -36,4 +36,6 @@
     </button>
 
 </div>
+ {{$paginate->links('pagination::bootstrap-4')}}
+
 @endsection
